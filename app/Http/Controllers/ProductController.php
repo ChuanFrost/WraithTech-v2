@@ -10,6 +10,6 @@ class ProductController extends Controller
 
     public function index()
     {
-        return response()->json(["Data" => Product::all()]);
+        return response()->json(["data" => Product::all()]);
     }
 }

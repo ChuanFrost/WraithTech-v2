@@ -1,0 +1,22 @@
+<div class="col-12 col-lg-5 product-list">
+    <div ng-repeat="(index, product) in products track by $index" class="product" id="product">
+        <div class="row no-gutters max-height">
+            <div class="col-lg-4">
+                <img ng-src="http://localhost:8000/storage{{product.img}}">
+            </div>
+            <div class="col-lg-8">
+                <p class="p-name">{{product.name}}</p>
+                <p class="p-price">RM&nbsp;{{ product.price	}}</p>
+                <p class="p-sold-out"  ng-if="product.qty == 0">OUT OF STOCK</p>
+                <p class="p-qty" ng-else>{{product.qty}}&nbsp;<i>in stock</i>	</p>
+
+
+                <div class="btn-position" ng-if="product.qty != 0">
+                    <button @click="addToCart(index)" class="btn-green btn-size-form"><i class="fas fa-cart-plus"></i><span class="atc">&nbsp;Add To Cart</span></button>
+                    <button class="btn-blue btn-size-form" @click="about(index)">About</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
