@@ -1,12 +1,17 @@
 {
   "name": "frontend",
   "version": "1.0.0",
+  "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "http-server ./src -a localhost -p 8001 -c-1"
+    "start": "http-server ./src -a localhost -p 8001 -c-1",
+    "build": "npx webpack --config webpack.config.js"
   },
   "dependencies": {
     "angular": "^1.7.9",
-    "http-server": "^0.12.1"
+    "angular-resource": "^1.7.9",
+    "http-server": "^0.12.1",
+    "webpack": "^4.41.6",
+    "webpack-cli": "^3.3.11"
   }
 }
