@@ -1,13 +1,15 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
+    mode: 'development',
     entry: './src/index.js',
     output: {
         filename: 'app.js',
-        path: path.resolve(__dirname, 'src/public'),
+        path: path.resolve(__dirname, './public'),
     },
+    devtool: 'inline-source-map',
     module: {
         rules: [
             {
@@ -20,12 +22,11 @@ module.exports = {
         ],
     },
     plugins: [
-        new CleanWebpackPlugin(),
-        new HtmlWebpackPlugin({
-            title: 'Output Management',
-        }),
-    ],
-    optimization: {
-        minimize: false
-    },
+        new HtmlWebpackPlugin(
+            {
+                template: './src/index.html'
+            }
+        ),
+        // new CleanWebpackPlugin()
+    ]
 };

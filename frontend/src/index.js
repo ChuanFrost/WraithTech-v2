@@ -1,6 +1,11 @@
 
 require('./styles/all.css')
 
-require('angular');
-require('angular-resource')
+import './app.module.js'
+import './app.services.js';
+
+//features
+import './app/shopping/module.js';
+
+
 

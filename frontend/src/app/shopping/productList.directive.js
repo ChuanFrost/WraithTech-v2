@@ -1,27 +1,32 @@
 'use strict';
 
-angular
-.module('wraithTech')
-    .component('productList', {
+export default angular.module('wraithTech')
+    .component('productList',
+    {
         templateUrl: 'productList.html',
         controller: ['$scope', 'ProductService',
-        function productListCtrl($scope, ProductService,) {
+        function productListCtrl($scope, ProductService,)
+        {
             $scope.products = []
 
-            function initialize() {
+            function initialize()
+            {
                 ProductService.get(
                     {},
-                    function(response) {
+                    function(response)
+                    {
                         $scope.products = response.data;
                     },
-                    function() {
+                    function()
+                    {
                         console.log("error")
                     }
                 )
             }
-
             initialize();
-        }
-        ]
+        }]
     });
+
+
+
 
