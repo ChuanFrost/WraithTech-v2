@@ -1,6 +1,9 @@
 'use strict';
 
-angular.module('wraithTech',
+import angular from 'angular';
+import 'angular-resource';
+
+export default angular.module('wraithTech',
     [
         'ngResource'
     ]).config(function($httpProvider)

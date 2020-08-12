@@ -53,7 +53,7 @@ input[disabled] {
     height:20vh;
 }
 
-#main.active 
+#main.active
 {
     width: 100%;
 }
@@ -190,7 +190,7 @@ input[disabled] {
     transition: all 0.3s ease-out;
 }
 
-.btn-blue:hover 
+.btn-blue:hover
 {
     background-color:#74ADD3;
     color:black;
@@ -240,21 +240,21 @@ input[disabled] {
 
 .btn-size-form
 {
-    padding:3px 10px;    
+    padding:3px 10px;
     font-size: 17px;
     font-weight: 600;
 }
 
 .btn-size-form2
 {
-    line-height: 50px;    
+    line-height: 50px;
     font-size: 20px;
     font-weight: 600;
 }
 
 .btn-size-1
 {
-    padding:3px 10px;    
+    padding:3px 10px;
     font-size: 17px;
     font-weight: 500;
 }
@@ -315,7 +315,7 @@ input[disabled] {
 
     background-color:black;
     position:fixed;
-    
+
     top:0;
     opacity:0.8;
 
@@ -326,8 +326,8 @@ input[disabled] {
 
 #load-icon
 {
-    border: 10px solid #292826; 
-    border-top: 10px solid #F9D342; 
+    border: 10px solid #292826;
+    border-top: 10px solid #F9D342;
     border-radius: 50%;
     width: 100px;
     height: 100px;
@@ -338,7 +338,7 @@ input[disabled] {
     margin-top:20%;
 
     opacity:99999;
-    
+
 }
 
 @keyframes spin {
@@ -361,15 +361,15 @@ input[disabled] {
 }
 
 .cart-search-box button
-{   
+{
     width:100%;
 
 }
 .product-list
-{   
+{
 
     height:100%;
-    
+
     overflow-y: auto;
     background: #E0E0E0;
 
@@ -458,7 +458,7 @@ input[disabled] {
 
 .cart p, .cart img, .cart button
 {
-    
+
     margin-bottom:5px ;
 }
 
@@ -500,7 +500,7 @@ input[disabled] {
 #place-order-overlay.active , #about-product-overlay.active
 {
     background:linear-gradient(90deg, rgba(0,0,0,0.26934523809523814) 0%, rgba(0,0,0,0.7483368347338936) 0%);
-    top:0;    
+    top:0;
 }
 
 #place-order,#about-product
@@ -520,7 +520,7 @@ input[disabled] {
     padding:30px 15px;
 }
 
-.about-product-detail 
+.about-product-detail
 {
     padding-top:30px;
 }
@@ -538,7 +538,7 @@ input[disabled] {
 }
 
 .detail-box
-{   
+{
     padding-left:10px !important;
 }
 
@@ -608,7 +608,7 @@ input[disabled] {
 
 .product-manager-list p, .product-manager-list img, .product-manager-list button
 {
-    
+
     margin-bottom:5px ;
 }
 
@@ -654,7 +654,7 @@ input[disabled] {
 
 .add-btn
 {
-    padding:10px 0px;    
+    padding:10px 0px;
     font-size: 30px;
     font-weight: 600;
 
@@ -676,7 +676,7 @@ input[disabled] {
 {
     font-weight:700;
     width:100%;
-    padding:3px 0px;    
+    padding:3px 0px;
 }
 
 .config-btn:hover i
@@ -719,7 +719,7 @@ input[disabled] {
     position: absolute;
 
     background:white;
-    opacity:1;   
+    opacity:1;
 
     right:0;
 
@@ -798,7 +798,7 @@ input[disabled] {
     position: absolute;
 
     background:white;
-    opacity:1;   
+    opacity:1;
 
     right:0;
 
@@ -838,7 +838,7 @@ input[disabled] {
 
 .account-btn-box .addBtn
 {
-    padding:10px 0px;    
+    padding:10px 0px;
     font-size: 25px;
     font-weight: 600;
 
@@ -903,7 +903,7 @@ input[disabled] {
 	    transform:scale(0.85);
 	}
 
-	#main.active 
+	#main.active
 	{
 	    width: 100%;
 	}
@@ -962,7 +962,7 @@ input[disabled] {
 	    text-align: center;
 	}
 	.productList, .cartList
-	{	
+	{
 
 
 		height:40%;
@@ -982,7 +982,7 @@ input[disabled] {
 
 	.overlay-close-btn
 	{
-	 
+
 		padding:0 auto;
 	    width:100%;
 
@@ -1100,7 +1100,7 @@ input[disabled] {
 	{
 		display:inline-block;
 	}
-	
+
 	.order-box button
 	{
 		position:absolute;
@@ -1109,7 +1109,7 @@ input[disabled] {
 
 	#place-order,#about-product
 	{
-	   
+
 	    width:100%;
 	}
 
@@ -1133,7 +1133,7 @@ input[disabled] {
 
 	.product-search-box button
 	{
-	    width:49%; 
+	    width:49%;
 	    display:inline-block;
 	}
 
@@ -1165,7 +1165,7 @@ input[disabled] {
 	.add-btn
 	{
 	    width:79%;
-	    padding:3px 0;   
+	    padding:3px 0;
 	    font-size:16px;
 	    display:inline-block;
 	}
@@ -1233,7 +1233,7 @@ input[disabled] {
 		height:280px;
 	}
 
-	#product-setting input 
+	#product-setting input
 	{
 		width:100%;
 	}
@@ -1290,7 +1290,7 @@ input[disabled] {
 	}
 	.account-btn-box button
 	{
-	    padding:3px 0;   
+	    padding:3px 0;
 	    font-size:16px;
 
 	    width:100%;
@@ -1300,10 +1300,9 @@ input[disabled] {
 	/*------------------------------------------------------------------------------------------------*/
 
 }
+
 @media screen and (min-width: 992px) and (max-width:1210px)
 {
-
-
 	#sidebar
 	{
 	    width: 200px;
@@ -1322,7 +1321,7 @@ input[disabled] {
 	    margin-left: -200px;
 	}
 
-	#main.active 
+	#main.active
 	{
 	    width: 100%;
 	}
@@ -1352,7 +1351,4 @@ input[disabled] {
 	{
 		padding:0 10px 0 5px;
 	}
-
-	
-
 }
