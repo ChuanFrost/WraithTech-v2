@@ -3,7 +3,7 @@
 export default angular.module('wraithTech')
     .component('productList',
     {
-        templateUrl: 'productList.html',
+        templateUrl: 'shopping/productList.html',
         controller: ['$scope', 'ProductService',
         function productListCtrl($scope, ProductService,)
         {
