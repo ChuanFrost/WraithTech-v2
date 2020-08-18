@@ -1,5 +1,4 @@
-import productList from './productList.directive.js';
+import shoppingCart from './shoppingCart.component.js';
+import '../components/searchProduct/module.js'
 
-export default productList;
-
-
+export default shoppingCart;

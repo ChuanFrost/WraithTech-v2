@@ -10,10 +10,12 @@
     "build": "npx webpack --config webpack.prod.js"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.14.0",
     "angular": "^1.8.0",
     "angular-resource": "^1.8.0",
     "bootstrap": "^4.5.2",
-    "http-server": "^0.12.3"
+    "http-server": "^0.12.3",
+    "sweetalert2": "^9.17.1"
   },
   "devDependencies": {
     "webpack": "^4.44.1",
