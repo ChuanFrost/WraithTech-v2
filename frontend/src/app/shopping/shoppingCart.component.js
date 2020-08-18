@@ -10,13 +10,32 @@ export default angular.module('wraithTech')
         {
             var ctrl = this;
 
-            ctrl.products = [];
+            ctrl.$onInit = function()
+            {
+                ctrl.getProduct()
+            }
+
             ctrl.cartList = [];
             ctrl.totalPrice = 0.00;
 
             ctrl.addToCart = addToCart;
-            ctrl.updateList = updateList;
+            ctrl.updateProducts = updateProducts;
             ctrl.removeFromCart = removeFromCart;
+            ctrl.getProduct = getProduct;
+
+            function getProduct() {
+                ProductService.get(
+                    {},
+                    function(response)
+                    {
+                        ctrl.products = response.products;
+                    },
+                    function()
+                    {
+                        console.log("error")
+                    }
+                )
+            }
 
             function addToCart(index) {
                 var obj = {};
@@ -75,30 +94,9 @@ export default angular.module('wraithTech')
                 }
             }
 
-            function updateList() {
-                Swal.fire(
-                {
-                    icon:'error',
-                    title: 'abc',
-                    text: 'efg',
-                })
+            function updateProducts(products) {
+                ctrl.products = products;
             };
-
-            function initialize()
-            {
-                ProductService.get(
-                    {},
-                    function(response)
-                    {
-                        ctrl.products = response.data;
-                    },
-                    function()
-                    {
-                        console.log("error")
-                    }
-                )
-            }
-            initialize();
         }]
 
     });
