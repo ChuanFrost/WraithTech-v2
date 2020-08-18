@@ -1,0 +1,42 @@
+<div class="row no-gutters" id="shoppingCart">
+    <div class="col-12 col-lg-5 product-list">
+        <div ng-repeat="(index, product) in $ctrl.products track by $index" class="product" id="product">
+            <div class="row no-gutters max-height">
+                <div class="col-lg-4">
+                    <img ng-src="http://localhost:8000{{product.img}}">
+                </div>
+                <div class="col-lg-8">
+                    <p class="p-name">{{product.name}}</p>
+                    <p class="p-price">RM&nbsp;{{ product.price | number: 2}}</p>
+                    <p class="p-sold-out"  ng-if="product.qty == 0">OUT OF STOCK</p>
+                    <p class="p-qty" ng-else>{{product.qty}}&nbsp;<i>in stock</i>	</p>
+
+
+                    <div class="btn-position" ng-if="product.qty != 0">
+                        <button ng-click="$ctrl.addToCart(index)" class="btn-green btn-size-form"><i class="fas fa-cart-plus"></i><span class="atc">&nbsp;Add To Cart</span></button>
+                        <button class="btn-blue btn-size-form" ng-click="$ctrl.about(index)">About</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="col-12 col-lg-5 max-height">
+        <div class="cart-list">
+            <div ng-repeat="(index, cart) in $ctrl.cartList track by $index" class="cart" id="cart" >
+                <p class="c-name">{{cart.name}}</p>
+                <img ng-src="http://localhost:8000{{cart.img}}" style="width:150px;height:100px">
+                <p>RM&nbsp;{{ cart.price | number: 2}}</p>
+                <p>Qty: {{cart.qty}}</p>
+                <button ng-click="$ctrl.removeFromCart(index)" class="btn-red"><i class="fas fa-minus"></i></button>
+
+            </div>
+        </div>
+
+        <div class="order-box">
+            <p class="float-lg-left total-price">Total: RM {{$ctrl.totalPrice | number: 2}}</p>
+            <button class="float-lg-right btn-yellow btn-size-form" onclick="toggleOverlay('#place-order-overlay')">Place Order</button>
+        </div>
+    </div>
+</div>
+
