@@ -1,4 +1,7 @@
 <div class="row no-gutters" id="shoppingCart">
+    <div class="col-12 col-lg-2 max-height cart-search-box">
+        <search-product on-search="$ctrl.updateProducts(products)" on-clear="$ctrl.getProduct()"></search-product>
+    </div>
     <div class="col-12 col-lg-5 product-list">
         <div ng-repeat="(index, product) in $ctrl.products track by $index" class="product" id="product">
             <div class="row no-gutters max-height">
