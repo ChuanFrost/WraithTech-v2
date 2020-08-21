@@ -17,11 +17,13 @@ export default angular.module('wraithTech')
 
             ctrl.cartList = [];
             ctrl.totalPrice = 0.00;
+            ctrl.isShowAbout = false;
 
             ctrl.addToCart = addToCart;
             ctrl.updateProducts = updateProducts;
             ctrl.removeFromCart = removeFromCart;
             ctrl.getProduct = getProduct;
+            ctrl.showAbout = showAbout;
 
             function getProduct() {
                 ProductService.get(
@@ -97,6 +99,11 @@ export default angular.module('wraithTech')
             function updateProducts(products) {
                 ctrl.products = products;
             };
+
+            function showAbout(product) {
+                ctrl.product = product;
+                ctrl.isShowAbout = true;
+            }
         }]
 
     });

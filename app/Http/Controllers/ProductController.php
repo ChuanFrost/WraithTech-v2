@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Products;
-use App\Brands;
 use App\Types;
+use App\Brands;
+use App\Products;
 use Illuminate\Http\Request;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class ProductController extends Controller
 {
@@ -15,6 +16,15 @@ class ProductController extends Controller
         return response()->json(["products" => Products::all()]);
     }
 
+    public function show($id)
+    {
+        try {
+            $product = Products::findOrFail($id);
+            return response()->json(["product" => $product]);
+        } catch (ModelNotFoundException $ex) {
+            return response()->json(["message"=> $ex->getMessage()], 404);
+        }
+    }
 
     public function search(Request $request)
     {

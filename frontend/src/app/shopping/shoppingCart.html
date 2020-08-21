@@ -17,7 +17,7 @@
 
                     <div class="btn-position" ng-if="product.qty != 0">
                         <button ng-click="$ctrl.addToCart(index)" class="btn-green btn-size-form"><i class="fas fa-cart-plus"></i><span class="atc">&nbsp;Add To Cart</span></button>
-                        <button class="btn-blue btn-size-form" ng-click="$ctrl.about(index)">About</button>
+                        <button class="btn-blue btn-size-form" ng-click="$ctrl.showAbout(product)">About</button>
                     </div>
                 </div>
             </div>
@@ -38,8 +38,34 @@
 
         <div class="order-box">
             <p class="float-lg-left total-price">Total: RM {{$ctrl.totalPrice | number: 2}}</p>
-            <button class="float-lg-right btn-yellow btn-size-form" onclick="toggleOverlay('#place-order-overlay')">Place Order</button>
+            <button class="float-lg-right btn-yellow btn-size-form" ng-click="">Place Order</button>
         </div>
     </div>
+
+    <custom-overlay is-show="$ctrl.isShowAbout" data="$ctrl.product">
+        <div id="about-product">
+            <div class="row no-gutters">
+                <div class="col-12">
+                    <button class="overlay-close-btn2" type="button" ng-click="$parent.$ctrl.closeOverlay()"><i class="fas fa-angle-down"></i></button>
+                </div>
+                <div class="col-12 col-lg-8 offset-lg-2 text-center">
+                    <div class="row no-gutters about-product-detail">
+                        <div class="col-6 text-center img-box">
+                            <img  class="img" ng-src="http://localhost:8000{{$parent.$ctrl.data.img}}" >
+                        </div>
+                        <div class="col-6 text-left detail-box">
+                            <p class="a-name">{{ $parent.$ctrl.data.name }}</p >
+                            <p class="a-price">RM&nbsp;{{ $parent.$ctrl.data.price| number: 2}}</p>
+                            <p class="a-qty">{{ $parent$ctrl.data.qty}}&nbsp;<i>in stock</i></p>
+                        </div>
+                        <div class="col-12 img-detail-box">
+                            <p>Product Detail</p>
+                            <img class="imgDetail" ng-src="http://localhost:8000{{ $parent.$ctrl.data.imgDetail}}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </custom-overlay>
 </div>
 

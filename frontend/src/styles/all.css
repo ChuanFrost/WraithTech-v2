@@ -432,7 +432,7 @@ input[disabled] {
     height:90%;
     overflow-y:auto;
     background: #222222;
-    background-image: url('/img/shopping-cart.png');
+    background-image: url('http://localhost:8000/img/shopping-cart.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: 150px 150px;
@@ -482,7 +482,7 @@ input[disabled] {
     font-weight:600;
 }
 
-#place-order-overlay, #about-product-overlay
+#place-order-overlay, #about-product-overlay, .custom-overlay
 {
     height: 100%;
     width: 100%;
@@ -498,7 +498,7 @@ input[disabled] {
     transition: top 0.3s linear;
 }
 
-#place-order-overlay.active , #about-product-overlay.active
+#place-order-overlay.active , #about-product-overlay.active, .custom-overlay.active
 {
     background:linear-gradient(90deg, rgba(0,0,0,0.26934523809523814) 0%, rgba(0,0,0,0.7483368347338936) 0%);
     top:0;
