@@ -1,12 +1,32 @@
 'use strict';
 
-import angular from 'angular';
+import 'angular';
 import 'angular-resource';
+import '@uirouter/angularjs';
 
 export default angular.module('wraithTech',
     [
-        'ngResource'
-    ]).config(function($httpProvider)
+        'ngResource', 'ui.router'
+    ]).config(function($httpProvider, $locationProvider)
     {
         $httpProvider.defaults.headers.common['Accept'] = 'application/json';
+        $locationProvider.hashPrefix('');
+    }).config(function($stateProvider, $urlRouterProvider)
+    {
+        var states = [
+            {
+                name: 'shoppingCart',
+                url: '/',
+                component: 'shoppingCart'
+            },
+            {
+                name: 'login',
+                url: '/login',
+                template: '<h1>I am login</h1>'
+            }
+        ]
+
+        states.forEach((state)=>$stateProvider.state(state))
+
+        $urlRouterProvider.otherwise('/')
     })
