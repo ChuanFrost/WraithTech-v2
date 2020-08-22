@@ -2,7 +2,7 @@
 
 import 'angular';
 import 'angular-resource';
-import '@uirouter/angularjs/release/angular-ui-router.js';
+import '@uirouter/angularjs';
 
 export default angular.module('wraithTech',
     [
