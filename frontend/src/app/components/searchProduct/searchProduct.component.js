@@ -1,5 +1,6 @@
 'use strict'
-import Swal from 'sweetalert2'
+import {path} from "../../../constant.js";
+
 export default angular.module('wraithTech')
 .component('searchProduct',
 {
@@ -11,7 +12,7 @@ export default angular.module('wraithTech')
 
             ctrl.$onInit = function()
             {
-                $http.get('http://localhost:8000/api/product/searchParams').then(
+                $http.get(path.product.searchParams).then(
                     function(response)
                     {
                         response = response.data;
@@ -40,7 +41,7 @@ export default angular.module('wraithTech')
                     brand: ctrl.searchBrand
                 }
 
-                $http.get('http://localhost:8000/api/product/search', {params:params}).then(
+                $http.get(path.product.search, {params:params}).then(
                     function(response)
                     {
                         response = response.data;
