@@ -1,5 +1,6 @@
 'use strict';
 import Swal from 'sweetalert2';
+import {url} from '../../constant.js';
 
 export default angular.module('wraithTech')
     .component('shoppingCart',
@@ -18,6 +19,7 @@ export default angular.module('wraithTech')
             ctrl.cartList = [];
             ctrl.totalPrice = 0.00;
             ctrl.isShowAbout = false;
+            ctrl.url = url;
 
             ctrl.addToCart = addToCart;
             ctrl.updateProducts = updateProducts;

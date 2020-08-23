@@ -8,6 +8,3 @@ import './app.services.js';
 
 //features-/
 import './app/shopping/module.js';
-
-
-

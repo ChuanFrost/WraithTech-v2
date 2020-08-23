@@ -1,9 +1,11 @@
 'use strict';
 
+import {path} from './constant.js';
+
 export default angular.module('wraithTech')
     .factory('ProductService', ['$resource',
         function($resource) {
             return $resource(
-                'http://localhost:8000/api/product/:id',
+                path.product.index + '/:id',
                 )
         }])
