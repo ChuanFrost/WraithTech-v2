@@ -1,0 +1,40 @@
+<div id="product-manager" class="max-height">
+	<div class="row max-height">
+		<div class="col-12 col-lg-3 product-left-pane">
+
+			<div class="row" style="width:100%;margin:0">
+				<div class="product-control-box order-2 order-lg-1 col-12 ">
+					<button  ng-click="$ctrl.create()" class="btn-green add-btn"><i class="fas fa-plus"></i></button>
+					<button onclick="" class="config-btn mt-lg-3 mt-0"><i class="fas fa-cog pr-lg-1 pr-0"></i><span class="config-txt">Configuration</span></button>
+				</div>
+
+				<div class="product-search-box order-1 order-lg-2 col-12 no-gutters">
+					<search-product on-search="$ctrl.updateProducts(products)" on-clear="$ctrl.getProduct()"></search-product>
+				</div>
+			</div>
+
+		</div>
+		<div class="col-12 col-lg-9 product-right-pane">
+
+			<div class="product-manager-list">
+				<div ng-repeat="(index,product) in $ctrl.products" class="product" ng-class="{active: product.qty == 0}" id="product">
+
+					<p><strong>{{product.name}}</strong></p>
+					<img ng-src="{{$ctrl.url + product.img + '?' + Math.random()}}" style="width:150px;height:100px">
+					<p>RM&nbsp;{{product.price}}</p>
+					<p style="font-size:0.8em">{{product.qty}} <i>in stock</i></p>
+
+
+					<button ng-click="$ctrl.edit(product)" class="btn-blue btn-size-form">Edit</button>
+					<button ng-click="$ctrl.remove(product.id)" class="btn-red btn-size-form"><i class="fas fa-times"></i></button>
+
+				</div>
+			</div>
+		</div>
+
+    </div>
+
+    <custom-overlay is-show="$ctrl.isShow.product" overlay-type="'vert-overlay'" >
+        <product-form data="$ctrl.data" on-close="$parent.$ctrl.closeOverlay()"></product-form>
+    </custom-overlay>
+</div>

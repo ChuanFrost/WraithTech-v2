@@ -20,9 +20,9 @@ export default angular.module('wraithTech',
                 component: 'shoppingCart'
             },
             {
-                name: 'login',
-                url: '/login',
-                template: '<h1>I am login</h1>'
+                name: 'product',
+                url: '/product',
+                component: 'productManager'
             }
         ]
 

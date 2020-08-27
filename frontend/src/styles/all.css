@@ -482,7 +482,7 @@ input[disabled] {
     font-weight:600;
 }
 
-#place-order-overlay, #about-product-overlay, .custom-overlay
+#place-order-overlay, #about-product-overlay, .hori-overlay
 {
     height: 100%;
     width: 100%;
@@ -498,10 +498,33 @@ input[disabled] {
     transition: top 0.3s linear;
 }
 
-#place-order-overlay.active , #about-product-overlay.active, .custom-overlay.active
+#place-order-overlay.active , #about-product-overlay.active, .hori-overlay.active
 {
     background:linear-gradient(90deg, rgba(0,0,0,0.26934523809523814) 0%, rgba(0,0,0,0.7483368347338936) 0%);
     top:0;
+}
+
+
+.vert-overlay
+{
+    height: 100%;
+    width: 100%;
+
+    position: fixed;
+
+    top:0;
+    right: -100vw;
+
+    background:transparent;
+
+    z-index: 1;
+    transition: right 0.3s linear;
+}
+
+.vert-overlay.active
+{
+    background:linear-gradient(90deg, rgba(0,0,0,0.26934523809523814) 0%, rgba(0,0,0,0.7483368347338936) 0%);
+    right: 0;
 }
 
 #place-order,#about-product

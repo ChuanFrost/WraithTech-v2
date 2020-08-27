@@ -7,7 +7,7 @@ export default angular.module('wraithTech')
         var ctrl = this;
 
         ctrl.closeOverlay = closeOverlay;
-
+        ctrl.overlayType = 'custom-overlay'
         function closeOverlay()
         {
             ctrl.isShow = false;
@@ -15,7 +15,8 @@ export default angular.module('wraithTech')
     }],
     bindings: {
         isShow: '=',
-        data: '<',
+        // data: '<',
+        overlayType: '<',
         onClose: '&'
     },
     transclude: true,

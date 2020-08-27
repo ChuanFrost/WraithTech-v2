@@ -14,6 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('product', 'ProductController@index');
+Route::post('product', 'ProductController@create');
+Route::patch('product', 'ProductController@update');
+Route::delete('product/{id}', 'ProductController@delete');
 Route::get('product/search', 'ProductController@search');
 Route::get('product/searchParams', 'ProductController@searchParams');
 Route::get('product/{id}', 'ProductController@show');

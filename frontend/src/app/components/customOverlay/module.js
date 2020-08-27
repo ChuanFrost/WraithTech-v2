@@ -1,1 +1,1 @@
-export {customOverlay} from './customOverlay.component'
+export {default as customOverlay} from './customOverlay.component'

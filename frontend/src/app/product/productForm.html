@@ -1,0 +1,113 @@
+
+<div id="product-detail">
+    <div class="row">
+
+        <div class="col-12 col-lg-1">
+            <button type="button" ng-click="$ctrl.closeOverlay()" class="overlay-close-btn"><i class="fas fa-angle-right"></i></button>
+        </div>
+
+        <div class="col-12 col-lg-6">
+            <form id="myForm" ng-submit="$ctrl.handleSubmit($event)">
+                <input type="hidden" name="id" value="{{$ctrl.dataCopy.product.id}}">
+
+                <div class="form-group">
+                    <center>
+
+                        <img ng-src="{{$ctrl.url + $ctrl.dataCopy.product.img + '?' + Math.random()}}" id="img">
+                        <div class="file has-name pt-2">
+                            <label class="file-label  mx-lg-auto">
+                            <input type="file" name="img" file-on-change="$ctrl.previewImg($event)" class="file-input">
+                            <span class="file-cta">
+                                <span class="file-icon">
+                                <i class="fas fa-upload"></i>
+                                </span>
+                                <span class="file-label">
+                                Choose a file…
+                                </span>
+                            </span>
+                            <span class="file-name">
+                                {{ $ctrl.dataCopy.status.img }}
+                            </span>
+                            </label>
+                        </div>
+
+                        <p class="text-danger" ng-if="$ctrl.error.img">{{ $ctrl.error.img[0]}}</p>
+                    </center>
+
+
+                </div>
+
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" ng-model="$ctrl.dataCopy.product.name" name="name" class="form-control">
+                    <p class="text-danger" ng-if="$ctrl.error.name">{{ $ctrl.error.name[0]}}</p>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="type">Type</label>
+                    <select name="type" class="form-control" ng-model="$ctrl.dataCopy.product.type">
+                        <option value="">Select Type</option>
+                        <option ng-repeat="type in $ctrl.dataCopy.types" value="{{type.type}}">{{type.type}}</option>
+                        <option ng-if="$ctrl.dataCopy.product.tempoType" value="{{$ctrl.dataCopy.product.tempoType}}">{{$ctrl.dataCopy.product.tempoType}}</option>
+                    </select>
+                        <p class="text-danger" ng-if="$ctrl.error.type">{{ $ctrl.error.type[0]}}</p>
+                </div>
+
+                <div class="form-group">
+                    <label for="brand">Brand</label>
+                    <select name="brand" class="form-control" ng-model="$ctrl.dataCopy.product.brand">
+                        <option value="">Select Brand</option>
+                        <option ng-repeat="brand in $ctrl.dataCopy.brands" value="{{brand.brand}}">{{brand.brand}}</option>
+                        <option ng-if="$ctrl.dataCopy.product.tempoBrand" value="{{$ctrl.dataCopy.product.tempoBrand}}">{{ $ctrl.dataCopy.product.tempoBrand }}</option>
+                    </select>
+                        <p class="text-danger" ng-if="$ctrl.error.brand">{{ $ctrl.error.brand[0]}}</p>
+                </div>
+
+                <div class="form-group">
+                    <label for="price">Price</label>
+                    <input type="text" name="price" class="form-control" ng-model="$ctrl.dataCopy.product.price">
+                    <p class="text-danger" ng-if="$ctrl.error.price">{{ $ctrl.error.price[0]}}</p>
+                </div>
+
+                <div class="form-group">
+                    <label for="qty">Qty in Stock</label>
+                    <input type="text" name="qty" class="form-control" ng-model="$ctrl.dataCopy.product.qty">
+                    <p class="text-danger" ng-if="$ctrl.error.qty">{{ $ctrl.error.qty[0]}}</p>
+                </div>
+
+                <div class="form-group">
+                    <label for="imgDetail">Product Detail Image</label>
+
+                    <br>
+                    <div class="file has-name">
+                        <label class="file-label">
+                        <input type="file" name="imgDetail" file-on-change="$ctrl.previewImgDetail($event)" class="file-input">
+                        <span class="file-cta">
+                            <span class="file-icon">
+                            <i class="fas fa-upload"></i>
+                            </span>
+                            <span class="file-label">
+                            Choose a file…
+                            </span>
+                        </span>
+                        <span class="file-name">
+                            {{$ctrl.dataCopy.status.imgDetail}}
+                        </span>
+                        </label>
+                    </div>
+
+                    <p class="text-danger" ng-if="$ctrl.error.imgDetail">{{ $ctrl.error.imgDetail[0]}}</p>
+                    <br>
+                    <img ng-src="{{$ctrl.url + $ctrl.dataCopy.product.imgDetail + '?' + Math.random()}}" id="imgDetail">
+                </div>
+
+                <button type="submit" class="btn-blue btn-size-form2" ng-if="$ctrl.dataCopy.isEdit">Update</button>
+                <button type="submit" class="btn-green btn-size-form2" ng-if="!$ctrl.dataCopy.isEdit">Add</button>
+            </form>
+        </div>
+
+    </div>
+
+</div>
+
