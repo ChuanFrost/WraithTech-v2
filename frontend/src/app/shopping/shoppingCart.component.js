@@ -1,4 +1,6 @@
 'use strict';
+import '../components/searchProduct/module.js'
+import '../components/customOverlay/module.js'
 import Swal from 'sweetalert2';
 import {url} from '../../constant.js';
 

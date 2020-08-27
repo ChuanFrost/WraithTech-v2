@@ -28,7 +28,7 @@
         <div class="cart-list">
             <div ng-repeat="(index, cart) in $ctrl.cartList track by $index" class="cart" id="cart" >
                 <p class="c-name">{{cart.name}}</p>
-                <img ng-src="{{$ctrl.url + product.img}}" style="width:150px;height:100px">
+                <img ng-src="{{$ctrl.url + cart.img}}" style="width:150px;height:100px">
                 <p>RM&nbsp;{{ cart.price | number: 2}}</p>
                 <p>Qty: {{cart.qty}}</p>
                 <button ng-click="$ctrl.removeFromCart(index)" class="btn-red"><i class="fas fa-minus"></i></button>
@@ -42,7 +42,7 @@
         </div>
     </div>
 
-    <custom-overlay is-show="$ctrl.isShowAbout" data="$ctrl.product">
+    <custom-overlay is-show="$ctrl.isShowAbout" data="$ctrl.product" overlay-type="'hori-overlay'">
         <div id="about-product">
             <div class="row no-gutters">
                 <div class="col-12">
@@ -54,9 +54,9 @@
                             <img  class="img" ng-src="{{$ctrl.url + $parent.$ctrl.data.img}}" >
                         </div>
                         <div class="col-6 text-left detail-box">
-                            <p class="a-name">{{ $parent.$ctrl.data.name }}</p >
-                            <p class="a-price">RM&nbsp;{{ $parent.$ctrl.data.price| number: 2}}</p>
-                            <p class="a-qty">{{ $parent.$ctrl.data.qty}}&nbsp;<i>in stock</i></p>
+                            <p class="a-name">{{$parent.$ctrl.data.name }}</p >
+                            <p class="a-price">RM&nbsp;{{$parent.$ctrl.data.price| number: 2}}</p>
+                            <p class="a-qty">{{$parent.$ctrl.data.qty}}&nbsp;<i>in stock</i></p>
                         </div>
                         <div class="col-12 img-detail-box">
                             <p>Product Detail</p>
