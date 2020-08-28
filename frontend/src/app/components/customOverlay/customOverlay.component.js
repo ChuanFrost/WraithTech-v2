@@ -15,7 +15,6 @@ export default angular.module('wraithTech')
     }],
     bindings: {
         isShow: '=',
-        // data: '<',
         overlayType: '<',
         onClose: '&'
     },
