@@ -25,7 +25,6 @@ export default angular.module('wraithTech')
                         ctrl.handleSubmit = handleSubmit;
                         ctrl.previewImg = previewImg;
                         ctrl.previewImgDetail = previewImgDetail;
-                        ctrl.closeOverlay = closeOverlay;
 
                         function handleSubmit($event) {
                             var form = new FormData($event.target);
@@ -111,10 +110,6 @@ export default angular.module('wraithTech')
 
                         function previewImgDetail($event) {
                             ctrl.dataCopy.status.imgDetail = preview($event, '#imgDetail');
-                        }
-
-                        function closeOverlay(){
-                            ctrl.onClose();
                         }
                     }],
         bindings:
