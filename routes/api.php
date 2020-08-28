@@ -24,3 +24,7 @@ Route::get('product/{id}', 'ProductController@show');
 Route::delete('product/{id}', 'ProductController@delete');
 Route::delete('product/type/{id}', 'ProductController@deleteType');
 Route::delete('product/brand/{id}', 'ProductController@deleteBrand');
+
+Route::get('order', 'OrderController@index');
+Route::post('order', 'OrderController@create');
+Route::post('order/status', 'OrderController@updateStatus');
