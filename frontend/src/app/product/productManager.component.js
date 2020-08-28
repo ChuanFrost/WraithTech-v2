@@ -9,8 +9,8 @@ export default angular.module('wraithTech')
     .component('productManager',
     {
         templateUrl: 'product/productManager.html',
-        controller:  ['ProductService','$http', '$state',
-        function productManagerCtrl(ProductService, $http, $state)
+        controller:  ['ProductService','$http', '$state', 'handleSuccess', 'handleError',
+        function productManagerCtrl(ProductService, $http, $state, handleSuccess, handleError)
         {
             var ctrl = this;
 
@@ -25,9 +25,9 @@ export default angular.module('wraithTech')
                         ctrl.types = response.types;
                         ctrl.brands = response.brands;
                     },
-                    function()
+                    function(response)
                     {
-                        console.log('searchParams api error');
+                        handleError(response);
                     }
                 );
             }
@@ -47,6 +47,7 @@ export default angular.module('wraithTech')
             ctrl.edit = edit;
             ctrl.remove = remove;
             ctrl.updateProducts = updateProducts;
+            ctrl.openBrandType = openBrandType;
 
 
             function getProduct()
@@ -57,9 +58,9 @@ export default angular.module('wraithTech')
                     {
                         ctrl.products = response.products;
                     },
-                    function()
+                    function(response)
                     {
-                        console.log("error");
+                        handleError(response);
                     }
                 )
             }
@@ -127,25 +128,13 @@ export default angular.module('wraithTech')
                             {
                                 ProductService.delete(
                                     {id:id},
-                                    function(response)
+                                    function()
                                     {
-                                        Swal.fire(
-                                            {
-                                                icon:'success',
-                                                title: 'Product successfully deleted.',
-                                            }
-                                        );
-                                        $state.reload();
+                                        handleSuccess('Product successfully deleted.',$state)
                                     },
                                     function(response)
                                     {
-                                        Swal.fire(
-                                            {
-                                                icon:'error',
-                                                title: 'Internal Server Error',
-                                                text: response.data.error,
-                                            }
-                                        );
+                                        handleError(response);
                                     }
                                     )
 
@@ -153,9 +142,20 @@ export default angular.module('wraithTech')
                         });
             }
 
-            function updateProducts(products) {
+            function updateProducts(products)
+            {
                 ctrl.products = products;
             };
+
+            function openBrandType()
+            {
+                ctrl.data = {
+                    types: ctrl.types,
+                    brands: ctrl.brands,
+                }
+
+                ctrl.isShow.brandType = true;
+            }
 
         }]
     });

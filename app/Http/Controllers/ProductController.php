@@ -192,4 +192,81 @@ class ProductController extends Controller
 
         return $product;
     }
+
+    public function addType(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'type' => 'required|unique:types|max:255',
+            ]);
+
+
+            if($validator->fails())
+            {
+                return response()->json(["error" => $validator->errors()], 400);
+            }
+
+            try
+            {
+                $types = new Types();
+                $types->type = $request->type;
+                $types->save();
+            } catch (QueryException $e) {
+
+                return response()->json(["error" => $e->getMessage()],500);
+            }
+
+            return response()->json(['Status' => "Success"]);
+    }
+
+    public function deleteType($id)
+    {
+        try
+        {
+            $types = Types::find($id);
+            $types->delete();
+        } catch (QueryException $e) {
+            return response()->json(["error" => $e->getMessage()],500);
+        }
+
+
+        return response()->json(['Status' => "Success"]);
+    }
+
+    public function addBrand(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'brand' => 'required|unique:brands|max:255',
+
+            ]);
+
+            if($validator->fails())
+            {
+                return response()->json(["error" => $validator->errors()], 400);
+            }
+
+            try
+            {
+                $brands = new Brands();
+                $brands->brand = $request->brand;
+                $brands->save();
+            } catch (QueryException $e) {
+                return response()->json(["error" => $e->getMessage()],500);
+            }
+
+            return response()->json(['Status' => "Success"]);
+    }
+
+    public function deleteBrand($id)
+    {
+        try
+        {
+            $types = Brands::find($id);
+            $types->delete();
+        } catch (QueryException $e) {
+            return response()->json(["error" => $e->getMessage()],500);
+        }
+
+
+        return response()->json(['Status' => "Success"]);
+    }
 }

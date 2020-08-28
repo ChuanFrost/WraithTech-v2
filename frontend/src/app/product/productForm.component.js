@@ -5,8 +5,8 @@ export default angular.module('wraithTech')
 .component('productForm',
     {
         templateUrl: 'product/productForm.html',
-        controller: ['ProductService', '$state',
-                    function productFormCtrl(ProductService, $state)
+        controller: ['ProductService', '$state', 'handleSuccess', 'handleError',
+                    function productFormCtrl(ProductService, $state, handleSuccess, handleError)
                     {
                         var ctrl = this;
 
@@ -35,11 +35,12 @@ export default angular.module('wraithTech')
                                     {}, form,
                                     function(response)
                                     {
-                                        handleSuccess('Product successfully updated');
+                                        handleSuccess('Product successfully updated', $state);
                                     },
                                     function (response)
                                     {
                                         handleError(response);
+                                        ctrl.error = response.data.error;
                                     }
                                 )
                             }
@@ -49,46 +50,15 @@ export default angular.module('wraithTech')
                                     {}, form,
                                     function()
                                     {
-                                        handleSuccess('Product successfully created');
+                                        handleSuccess('Product successfully created', $state);
                                     },
                                     function (response)
                                     {
                                         handleError(response);
+                                        ctrl.error = response.data.error;
                                     }
                                 )
                             }
-                        }
-
-                        function handleError(response)
-                        {
-                            switch(response.status)
-                            {
-                                case 400 :
-                                    ctrl.error = response.data.error;
-                                    break;
-
-                                default :
-                                    Swal.fire(
-                                        {
-                                            icon:'error',
-                                            title: 'Internal Server Error',
-                                            text: response.data.error,
-                                        }
-                                    );
-                            }
-                        }
-
-                        function handleSuccess(msg)
-                        {
-                            Swal.fire(
-                                {
-                                    icon:'success',
-                                    title: msg,
-                                }
-                            );
-
-                            $state.reload();
-                            ctrl.onClose();
                         }
 
                         function preview($event, name) {

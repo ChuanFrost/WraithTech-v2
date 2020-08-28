@@ -1,0 +1,26 @@
+<div id="product-setting">
+    <div class="row">
+        <div class="col-12 col-lg-1">
+            <button type="button" ng-click="$ctrl.onClose()" class="overlay-close-btn"><i class="fas fa-angle-right"></i></button>
+        </div>
+
+        <div class="col-12 col-lg-5 product-setting-table px-lg-2 px-4 mt-lg-5 mt-2">
+            <h2>Types</h2>
+            <input type="text" name="type" class="form-control d-inline" ng-model="$ctrl.newType">
+            <button type="button" class="btn-green btn-size-form" ng-click="$ctrl.addType()">Add</button>
+            <button type="button" class="btn-red btn-size-form" ng-click="$ctrl.newType = '';$ctrl.error.type = ''">Clear</button>
+            <br>
+            <p class="text-danger" ng-if="$ctrl.error.type">{{ $ctrl.error.type[0]}}</p>
+            <div id="typesTable" class="mt-2"></div>
+        </div>
+        <div class="col-12 col-lg-5  product-setting-table px-lg-2 px-4 mt-lg-5 mt-2">
+            <h2>Brands</h2>
+            <input type="text" name="type" class="form-control d-inline" ng-model="$ctrl.newBrand">
+            <button type="button" class="btn-green btn-size-form" ng-click="$ctrl.addBrand()">Add</button>
+            <button type="button" class="btn-red btn-size-form" ng-click="$ctrl.newType = '';$ctrl.error.brand = ''">Clear</button>
+            <br>
+            <p class="text-danger" ng-if="$ctrl.error.brand">{{ $ctrl.error.brand[0]}}</p>
+            <div id="brandsTable" class="mt-2"></div>
+        </div>
+    </div>
+</div>
