@@ -7,6 +7,8 @@ var path =
     'product':
     {
         'index': '/product',
+        'type': '/product/type',
+        'brand': '/product/brand',
         'search': '/product/search',
         'searchParams': '/product/searchParams'
     }

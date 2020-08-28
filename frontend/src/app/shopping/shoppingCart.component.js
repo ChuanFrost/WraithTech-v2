@@ -8,8 +8,8 @@ export default angular.module('wraithTech')
     .component('shoppingCart',
     {
         templateUrl: 'shopping/shoppingCart.html',
-        controller: ['ProductService',
-        function productListCtrl(ProductService)
+        controller: ['ProductService', 'handleError',
+        function productListCtrl(ProductService, handleError)
         {
             var ctrl = this;
 
@@ -36,9 +36,9 @@ export default angular.module('wraithTech')
                     {
                         ctrl.products = response.products;
                     },
-                    function()
+                    function(response)
                     {
-                        console.log("error")
+                        handleError(response);
                     }
                 )
             }

@@ -1,6 +1,7 @@
 'use strict';
 
 import {path} from './constant.js';
+import Swal from 'sweetalert2';
 
 export default angular.module('wraithTech')
     .factory('ProductService', ['$resource',
@@ -15,3 +16,47 @@ export default angular.module('wraithTech')
                 )
         }]
     )
+    .factory('handleSuccess',
+        function()
+        {
+            return function(msg, $state)
+            {
+                Swal.fire(
+                    {
+                        icon:'success',
+                        title: msg,
+                    }
+                );
+
+                $state.reload();
+            }
+        }
+    )
+    .factory('handleError',
+        function()
+        {
+            return function(response)
+            {
+                switch(response.status)
+                {
+                    case 400 :
+                        Swal.fire(
+                            {
+                                icon:'error',
+                                title: 'Validation Error',
+                            }
+                        );
+                        break;
+
+                    default :
+                        Swal.fire(
+                            {
+                                icon:'error',
+                                title: 'Internal Server Error',
+                                text: response.data.error,
+                            }
+                        );
+                }
+            }
+    }
+)
