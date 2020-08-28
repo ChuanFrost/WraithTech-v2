@@ -16,6 +16,13 @@ export default angular.module('wraithTech')
                 )
         }]
     )
+    .factory('OrderService', ['$resource',
+        function($resource) {
+            return $resource(
+                    path.order.index + '/:id',
+                )
+        }]
+    )
     .factory('handleSuccess',
         function()
         {

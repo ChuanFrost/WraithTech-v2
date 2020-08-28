@@ -1,6 +1,6 @@
 import shoppingCart from './shoppingCart.component.js';
 import aboutProduct from './aboutProduct.component.js';
-import brandType from './brandType.component.js';
+import placeOrder from './placeOrder.component.js';
 
-export {shoppingCart,aboutProduct,brandType};
+export {shoppingCart,aboutProduct, placeOrder};
 

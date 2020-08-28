@@ -5,7 +5,7 @@ import {path} from '../../constant.js';
 export default angular.module('wraithTech')
     .component('brandType',
     {
-        templateUrl: 'shopping/brandType.html',
+        templateUrl: 'product/brandType.html',
         controller: ['$http', '$state', 'handleSuccess', 'handleError',
             function aboutTypeCtrl($http, $state, handleSuccess, handleError)
             {

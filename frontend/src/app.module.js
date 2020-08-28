@@ -23,6 +23,11 @@ export default angular.module('wraithTech',
                 name: 'product',
                 url: '/product',
                 component: 'productManager'
+            },
+            {
+                name: 'order',
+                url: '/order',
+                component: 'orderManager'
             }
         ]
 

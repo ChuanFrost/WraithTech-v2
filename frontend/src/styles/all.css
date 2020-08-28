@@ -60,7 +60,8 @@ input[disabled] {
 
 #main
 {
-    width: calc(100% - 250px);
+    width: 100%;
+    /* width: calc(100% - 250px); */
     transition: all 0.3s;
     position: absolute;
     height:100vh;

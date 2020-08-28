@@ -11,6 +11,11 @@ var path =
         'brand': '/product/brand',
         'search': '/product/search',
         'searchParams': '/product/searchParams'
+    },
+    'order':
+    {
+        'index': '/order',
+        'status': '/order/status'
     }
 }
 

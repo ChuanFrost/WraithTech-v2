@@ -38,12 +38,16 @@
 
         <div class="order-box">
             <p class="float-lg-left total-price">Total: RM {{$ctrl.totalPrice | number: 2}}</p>
-            <button class="float-lg-right btn-yellow btn-size-form" ng-click="">Place Order</button>
+            <button class="float-lg-right btn-yellow btn-size-form" ng-click="$ctrl.placeOrder()">Place Order</button>
         </div>
     </div>
 
-    <custom-overlay is-show="$ctrl.isShowAbout" overlay-type="'hori-overlay'">
+    <custom-overlay is-show="$ctrl.isShow.about" overlay-type="'hori-overlay'">
         <about-product data="$ctrl.product" on-close="$parent.$ctrl.closeOverlay()"></about-product>
+    </custom-overlay>
+
+    <custom-overlay is-show="$ctrl.isShow.placeOrder" overlay-type="'hori-overlay'">
+        <place-order data="$ctrl.order" on-close="$parent.$ctrl.closeOverlay()"></place-order>
     </custom-overlay>
 </div>
 

@@ -11,3 +11,4 @@ import './app.factory.js';
 //features-/
 import './app/shopping/module.js';
 import './app/product/module.js';
+import './app/order/module.js';
